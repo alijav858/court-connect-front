@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { VenueCard } from "@/components/common/VenueCard";
+import { BookingForm } from "@/components/forms/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,8 @@ export const Dashboard = () => {
     phone: "+1 (555) 123-4567",
     memberSince: "March 2024"
   });
+
+  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
 
   // Mock data
   const upcomingBookings = [
@@ -110,9 +113,18 @@ export const Dashboard = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Welcome back, {user.name}!</h1>
-          <p className="text-muted-foreground mt-2">Manage your bookings and discover new venues</p>
+        <div className="mb-8 flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">Welcome back, {user.name}!</h1>
+            <p className="text-muted-foreground mt-2">Manage your bookings and discover new venues</p>
+          </div>
+          <Button 
+            variant="hero" 
+            size="lg"
+            onClick={() => setIsBookingFormOpen(true)}
+          >
+            Book Now
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -364,6 +376,11 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      <BookingForm 
+        isOpen={isBookingFormOpen} 
+        onClose={() => setIsBookingFormOpen(false)} 
+      />
 
       <Footer />
     </div>

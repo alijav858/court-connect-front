@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { VenueRegistrationForm } from "@/components/forms/VenueRegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +33,8 @@ export const VenueOwner = () => {
     businessName: "Elite Sports Complex",
     memberSince: "January 2024"
   });
+
+  const [isVenueFormOpen, setIsVenueFormOpen] = useState(false);
 
   // Mock data
   const venues = [
@@ -195,7 +198,10 @@ export const VenueOwner = () => {
           <TabsContent value="venues" className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold">My Venues</h2>
-              <Button variant="hero">
+              <Button 
+                variant="hero"
+                onClick={() => setIsVenueFormOpen(true)}
+              >
                 <Plus className="w-4 h-4 mr-2" />
                 Add New Venue
               </Button>
@@ -441,6 +447,11 @@ export const VenueOwner = () => {
           </TabsContent>
         </Tabs>
       </div>
+
+      <VenueRegistrationForm 
+        isOpen={isVenueFormOpen} 
+        onClose={() => setIsVenueFormOpen(false)} 
+      />
 
       <Footer />
     </div>
