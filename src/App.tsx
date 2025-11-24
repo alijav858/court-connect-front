@@ -9,6 +9,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { VenueOwner } from "./pages/VenueOwner";
 import { Admin } from "./pages/Admin";
 import { Venues } from "./pages/Venues";
+import { VenueDetails } from "./pages/VenueDetails";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/venues" element={<Venues />} />
+          <Route path="/venues/:id" element={<VenueDetails />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/venue-owner" element={<VenueOwner />} />
           <Route path="/admin" element={<Admin />} />
