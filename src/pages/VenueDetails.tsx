@@ -176,10 +176,9 @@ export const VenueDetails = () => {
 
         {/* Tabs Section */}
         <Tabs defaultValue="overview" className="mb-8">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="courts">Courts & Pricing</TabsTrigger>
-            <TabsTrigger value="amenities">Amenities</TabsTrigger>
             <TabsTrigger value="reviews">Reviews</TabsTrigger>
           </TabsList>
 
@@ -277,30 +276,6 @@ export const VenueDetails = () => {
             ))}
           </TabsContent>
 
-          {/* Amenities Tab */}
-          <TabsContent value="amenities">
-            <Card>
-              <CardHeader>
-                <CardTitle>Available Amenities</CardTitle>
-                <CardDescription>Facilities and services provided at this venue</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                  {venue.amenities.map((amenity, index) => {
-                    const Icon = amenity.icon;
-                    return (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="p-2 bg-primary/10 rounded-lg">
-                          <Icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium">{amenity.name}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
 
           {/* Reviews Tab */}
           <TabsContent value="reviews" className="space-y-4">
