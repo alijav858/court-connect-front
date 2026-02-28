@@ -166,7 +166,7 @@ export const VenueDetails = () => {
               </div>
             </div>
           </div>
-          <Button size="lg" onClick={() => setIsBookingOpen(true)}>
+          <Button size="lg" onClick={() => navigate(`/venues/${id}/book`)}>
             <Calendar className="h-4 w-4 mr-2" />
             Book Now
           </Button>
@@ -330,7 +330,7 @@ export const VenueDetails = () => {
 
         {/* Sticky Book Now Button for Mobile */}
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t md:hidden">
-          <Button className="w-full" size="lg" onClick={() => setIsBookingOpen(true)}>
+          <Button className="w-full" size="lg" onClick={() => navigate(`/venues/${id}/book`)}>
             <Calendar className="h-4 w-4 mr-2" />
             Book Now
           </Button>
