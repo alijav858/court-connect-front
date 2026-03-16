@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Menu, User, CalendarDays } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import { useState } from "react";
+import smartArenaLogo from "@/assets/smart-arena-logo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 interface HeaderProps {
