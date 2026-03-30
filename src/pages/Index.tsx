@@ -1,11 +1,11 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { HeroSlider } from "@/components/home/HeroSlider";
 import { VenueCard } from "@/components/common/VenueCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, MapPin, Clock, Shield, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-sports-venue.jpg";
 
 const Index = () => {
   // Mock featured venues data
