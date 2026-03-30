@@ -1,11 +1,11 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { HeroSlider } from "@/components/home/HeroSlider";
 import { VenueCard } from "@/components/common/VenueCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, MapPin, Clock, Shield, Star, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-sports-venue.jpg";
 
 const Index = () => {
   // Mock featured venues data
@@ -52,36 +52,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Sports venues" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-        
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-            Book Your Perfect
-            <span className="block text-accent">Sports Venue</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Discover and reserve amazing sports facilities in your area. From cricket grounds to tennis courts, find the perfect venue for your game.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="hero" className="text-lg px-8 py-4" asChild>
-              <Link to="/venues">Explore Venues</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white/10 border-white text-white hover:bg-white hover:text-foreground" asChild>
-              <Link to="/auth?mode=register&type=venue-owner">List Your Venue</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* Search Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
