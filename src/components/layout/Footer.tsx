@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { CalendarDays, Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import smartArenaLogo from "@/assets/smart-arena-logo.png";
 
 export const Footer = () => {
   return (
@@ -9,10 +10,8 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <CalendarDays className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-foreground">SportBook</span>
+              <img src={smartArenaLogo} alt="Smart Arena" className="w-8 h-8 object-contain" />
+              <span className="text-xl font-bold text-foreground">Smart Arena</span>
             </div>
             <p className="text-muted-foreground text-sm">
               The easiest way to book sports venues. Find and reserve courts, fields, and facilities in your area.
@@ -107,7 +106,7 @@ export const Footer = () => {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 SportBook. All rights reserved.
+              © 2024 Smart Arena. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
